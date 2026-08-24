@@ -20,6 +20,12 @@ def test_validate_email_fails_without_dot():
     assert result is False
 
 
+def test_validate_email_fails_without_dot_after_at():
+    validator = Validator()
+    result = validator.validate_email("invalid.email@emailcom")
+    assert result is False
+
+
 def test_validate_password_length_sucess():
     validator = Validator()
     result = validator.validate_password("12345678")
